@@ -1,4 +1,4 @@
-# fun-admin
+## fun-admin
 
 > A Vue.js project
 
