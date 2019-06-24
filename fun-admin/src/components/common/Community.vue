@@ -13,18 +13,18 @@
               <el-col :span="20">
                 <div class="cart righttop">
                   <el-row>
-                    <el-col :pull="1" :span="10">
+                    <el-col :pull="1" :span="10" class="user-id-col">
                       <a href="javascript:void" class="userId">Fontower</a>
                     </el-col>
-                    <el-col :span="14" :push="2">
+                    <el-col :span="14" :push="2" class="focus-warn-options">
                       <!-- <el-button-group>
                             <el-button plain>关注</el-button>
                             <el-button plain>举报</el-button>
                       </el-button-group>-->
-                      <img src="/static/img/unfocus.svg" alt="" style="width: 12%">
-                      <img src="/static/img/warn.svg" alt="" style="width: 12%">
+                      <img src="/static/img/unfocus.svg" alt="" style="width: 12%; cursor:pointer">
+                      <img src="/static/img/warn.svg" alt="" style="width: 12%; cursor:pointer">
                     </el-col>
-                    <el-col :pull="5">
+                    <el-col :pull="6">
                       <a href="javascript:void" class="userJob">全栈开发工程师</a>
                       <span>10 分钟前</span>
                     </el-col>
@@ -46,17 +46,17 @@
             <el-row type="flex" class="row-bg" justify="center">
               <el-col :span="8">
                 <div class="cart sub left" @click="zan">
-                  <img :src="zanSrc" style="width: 23%" alt>
+                  <img :src="zanSrc" style="width: 23%; cursor:pointer" alt>
                 </div>
               </el-col>
               <el-col :span="8">
                 <div class="cart sub center" @click>
-                  <img src="/static/img/comment.svg" style="width: 20%" alt>
+                  <img src="/static/img/comment.svg" style="width: 20%; cursor:pointer" alt>
                 </div>
               </el-col>
               <el-col :span="8">
                 <div class="cart sub right">
-                  <img src="/static/img/share.svg" style="width: 20%" alt>
+                  <img src="/static/img/share.svg" style="width: 20%; cursor:pointer" alt>
                 </div>
               </el-col>
             </el-row>
@@ -154,12 +154,25 @@ p {
 
 .userId {
   text-align: left;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .userJob {
   text-align: left;
   font-size: 12px;
 }
-
-
+.userJob+span {
+  text-align: left;
+  font-size: 12px;
+}
+.user-id-col {
+  margin-top: 10px;
+}
+.focus-warn-options {
+  margin-top: 13px;
+}
+.focus-warn-options img{
+  margin-left: 10px;
+}
 </style>

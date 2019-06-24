@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/common/Index'
 import HomeCart from '@/components/common/HomeCart'
 import Community from '@/components/common/Community'
+import Blog from '@/components/common/Blog'
 import Test from '@/components/common/Test'
 import Sub from '@/components/common/Sub'
 
@@ -23,6 +24,11 @@ export default new Router({
           path: '/Index/HomeCart',
           name: 'HomeCart',
           component: HomeCart
+        },
+        {
+          path: '/Index/Blog',
+          name: 'Blog',
+          component: Blog
         },
         {
           path: '/Index/Community',

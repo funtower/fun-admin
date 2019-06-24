@@ -17,6 +17,7 @@ import HomeCart from '@/components/common/HomeCart'
 Vue.component(HomeCart.name, HomeCart);
 // 注册全局组件 结束
 
+
 // 引入全局样式
 import '../static/css/global.css'
 

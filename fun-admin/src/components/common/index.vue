@@ -51,7 +51,7 @@ export default {
 }
 .logo img {
     width: 100%;
-    height: 100%;
+    height: 61px;
 
 }
 .el-header {
@@ -68,7 +68,7 @@ export default {
   background-color: rgb(84, 92, 100);
   color: #333;
   text-align: center;
-  line-height: 160px;
+  // line-height: 160px;
   height: 100%;
 }
 

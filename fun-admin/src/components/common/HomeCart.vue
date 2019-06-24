@@ -33,7 +33,9 @@ export default {
   line-height: 200px;
   margin: 0;
 }
-
+img{
+  height: 562px;
+}
 .el-carousel__item:nth-child(2n) {
   background-color: #99a9bf;
 }

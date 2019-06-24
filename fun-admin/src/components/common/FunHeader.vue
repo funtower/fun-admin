@@ -28,8 +28,11 @@
       <el-menu-item index="3" @click="community">
         <router-link :to="{name: 'Community'}">
           社区
-        </router-link></el-menu-item>
-      <el-menu-item index="4" @click="bolg">发博客</el-menu-item>
+        </router-link>
+      </el-menu-item>
+      <el-menu-item index="4" @click="blog">
+        <router-link :to="{name: 'Blog'}">发博客</router-link>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -52,7 +55,7 @@ export default {
     },
     community() {
     },
-    bolg () {
+    blog () {
       
     }
   }
@@ -61,4 +64,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+a {
+  width: 100% + 40px;
+  height: 100%;
+}
 </style>
