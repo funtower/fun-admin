@@ -42,7 +42,7 @@
         </div>
       </el-col>
       <el-col :span="8">
-        <div class="cart sub center" @click>
+        <div class="cart sub center">
           <img src="/static/img/comment.svg" style="width: 20%; cursor:pointer" alt>
         </div>
       </el-col>
@@ -68,7 +68,7 @@ export default {
   methods: {
     zan() {
       this.zanFlag = !this.zanFlag;
-      console.log(this.zanFlag);
+      console.log(this);
       this.zanSrc = this.zanFlag
         ? "/static/img/zan2.svg"
         : "/static/img/zan0.svg";
@@ -153,7 +153,7 @@ p {
 }
 
 .user-id-col {
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .focus-warn-options {
