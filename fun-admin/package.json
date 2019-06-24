@@ -12,6 +12,7 @@
   "dependencies": {
     "D": "^1.0.0",
     "element-ui": "^2.9.2",
+    "iview": "^3.4.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
