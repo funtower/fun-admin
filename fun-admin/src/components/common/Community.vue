@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="8" :offset="5">
+      <el-col :span="8" :push="6">
         <ul>
           <fun-cart-li></fun-cart-li>
           <fun-cart-li></fun-cart-li>

@@ -36,11 +36,12 @@
 
         <el-row>
           <el-col>
-            <vue-ueditor-wrap :config="myConfig"></vue-ueditor-wrap>
+            <vue-ueditor-wrap :config="myConfig" v-model="content" mode="observer"></vue-ueditor-wrap>
           </el-col>
         </el-row>
       </el-col>
     </el-row>
+    <el-button type="primary" @click="showData"> 获取 </el-button>
   </div>
 </template>
 
@@ -56,7 +57,7 @@ export default {
       myConfig: {
         // 如果需要上传功能,要服务器接口地址
         // serverUrl: this.$config.baseUrl + 'ueditor/ueditorConfig',
-        // serverUrl: 'http://localhost:8090/ueditor/ueditorConfig',
+        serverUrl: 'http://localhost:8081/ocl/funadmin/postBlog',
         // 你的UEditor资源存放的路径,相对于打包后的index.html
         UEDITOR_HOME_URL: "/static/utf8-jsp/",
         // 编辑器不自动被内容撑高
@@ -72,6 +73,11 @@ export default {
       },
       content: ""
     };
+  },
+  methods: {
+      showData(){
+          alert(this.content);
+      }
   }
 };
 </script>

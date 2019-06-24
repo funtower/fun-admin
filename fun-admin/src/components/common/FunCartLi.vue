@@ -30,7 +30,7 @@
           <p>
             performance：一个 PHP 性能分析器，可实时检测你的脚本、内存、
             数据库使用情况，支持 Laravel 和 Composer。GitHub
-            地址：https://github.com/bvanhoekelen/performancegithub.com/bvanhoekelen/p...
+            地址：<a href="https://github.com/bvanhoekelen/performancegithub.com/bvanhoekelen/p">https://github.com/bvanhoekelen/performancegithub.com/bvanhoekelen/p...</a>
           </p>
         </div>
       </el-col>
