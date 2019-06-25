@@ -31,7 +31,7 @@
         </router-link>
       </el-menu-item>
       <el-menu-item index="4" @click="blog">
-        <router-link :to="{name: 'Blog'}">发博客</router-link>
+        <router-link :to="{name: 'Blog'}">博客</router-link>
       </el-menu-item>
     </el-menu>
   </div>

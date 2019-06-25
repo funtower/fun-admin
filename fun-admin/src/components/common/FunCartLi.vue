@@ -6,17 +6,17 @@
           <img src="/static/img/portrait.svg" style="width: 70%">
         </div>
       </el-col>
-      <el-col :span="20">
+      <el-col :span="20" :push="1">
         <div class="cart righttop">
           <el-row>
             <el-col :pull="1" :span="10" class="user-id-col">
               <a href="javascript:void" class="userId">Fontower</a>
             </el-col>
-            <el-col :span="14" :push="2" class="focus-warn-options">
+            <el-col :span="14" :push="3" class="focus-warn-options">
               <img src="/static/img/unfocus.svg" alt style="width: 12%; cursor:pointer">
               <img src="/static/img/warn.svg" alt style="width: 12%; cursor:pointer">
             </el-col>
-            <el-col :pull="6">
+            <el-col :pull="7">
               <a href="javascript:void" class="userJob">全栈开发工程师</a>
               <span>10 分钟前</span>
             </el-col>
@@ -90,7 +90,7 @@ li {
   width: 100%;
   height: 100%;
   border-radius: 4px 4px 0px 0px;
-  line-height: 32px;
+  line-height: 27px;
 }
 
 .sub {
@@ -123,7 +123,7 @@ li {
 
 .righttop {
   margin-left: 73px;
-  width: 99.48955%;
+  width: 100%;
 }
 
 p {
@@ -138,13 +138,13 @@ p {
 
 .userId {
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .userJob {
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .userJob+span {
