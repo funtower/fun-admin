@@ -4,8 +4,8 @@
       <el-col :span="4" :offset="1">
         <Menu :theme="theme3" active-name="1">
           <MenuGroup title="内容管理">
-            <MenuItem name="1">
-              <Icon type="md-document" @click.native="toTopic"/>话题
+            <MenuItem name="1" @click.native="toTopic">
+              <Icon type="md-document"/>话题
             </MenuItem>
             <MenuItem name="2" @click.native="toArticle">
               <Icon type="md-chatbubbles"/>文章

@@ -15,10 +15,12 @@ export default {
   data() {
     return {
         swipeSrc: [
+          'static/img/woman.jpg',
+            'static/img/shuben.jpg',
             'static/img/xueshan.jpg',
             'static/img/nanchang.jpg',
+            'static/img/laoshanghai.jpg',
             'static/img/jiaoshi.jpg',
-            'static/img/shuben.jpg',
         ]
     };
   }
