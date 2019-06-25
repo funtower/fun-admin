@@ -5,9 +5,9 @@
         <Menu :theme="theme3" active-name="1">
           <MenuGroup title="内容管理">
             <MenuItem name="1">
-              <Icon type="md-document"/>话题
+              <Icon type="md-document" @click.native="toTopic"/>话题
             </MenuItem>
-            <MenuItem name="2">
+            <MenuItem name="2" @click.native="toArticle">
               <Icon type="md-chatbubbles"/>文章
             </MenuItem>
           </MenuGroup>
@@ -20,11 +20,7 @@
         </RadioGroup>
       </el-col>
       <el-col :span="11" :push="1">
-        <ul>
-          <fun-cart-li></fun-cart-li>
-          <fun-cart-li></fun-cart-li>
-          <fun-cart-li></fun-cart-li>
-        </ul>
+        <router-view></router-view>
       </el-col>
     </el-row>
   </div>
@@ -40,14 +36,21 @@ export default {
     };
   },
   methods: {
-
+    toTopic() {
+      this.$router.push('Topic');
+    },
+    toArticle() {
+      this.$router.push('Article');
+    }
+  },
+  created() {
+    this.$router.push({
+      name: 'Topic'
+    });
   }
 };
 </script>
 
 <style scoped lang="stylus">
-ul {
-  width: 100%;
-  height: 100%;
-}
+
 </style>

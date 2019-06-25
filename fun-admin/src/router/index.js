@@ -3,7 +3,10 @@ import Router from 'vue-router'
 import Index from '@/components/common/Index'
 import HomeCart from '@/components/common/HomeCart'
 import Community from '@/components/common/Community'
+import Topic from '@/components/common/Topic'
+import Article from '@/components/common/Article'
 import Blog from '@/components/common/Blog'
+import NotFound from '@/components/common/NotFound404'
 import Test from '@/components/common/Test'
 import Sub from '@/components/common/Sub'
 
@@ -33,7 +36,20 @@ export default new Router({
         {
           path: '/Index/Community',
           name: 'Community',
-          component: Community
+          redirect: '/Index/Community/Topic',
+          component: Community,
+          children: [
+            {
+              path: '/Index/Community/Topic',
+              name: 'Topic',
+              component: Topic
+            },
+            {
+              path: '/Index/Community/Article',
+              name: 'Article',
+              component: Article
+            }
+          ]
         },
         {
           path: '/Index/Test',
@@ -48,6 +64,16 @@ export default new Router({
           ]
         }
       ]
+    },
+    {
+      path: '*',
+      redirect: '/404'
+    },
+    {
+      path: '/404',
+      name: 'NotFound404',
+      component: NotFound
     }
+
   ]
 })
