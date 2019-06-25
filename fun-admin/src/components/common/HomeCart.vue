@@ -19,7 +19,7 @@ export default {
             'static/img/shuben.jpg',
             'static/img/xueshan.jpg',
             'static/img/nanchang.jpg',
-            'static/img/laoshanghai.jpg',
+            'static/img/laoshanghai.png',
             'static/img/jiaoshi.jpg',
         ]
     };
