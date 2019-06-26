@@ -10,15 +10,15 @@
         <div class="cart righttop">
           <el-row>
             <el-col :pull="1" :span="10" class="user-id-col">
-              <a href="javascript:void" class="userId">Fontower</a>
+              <a href="javascript:void" class="userId">{{ topic.name }}</a>
             </el-col>
             <el-col :span="14" :push="3" class="focus-warn-options">
               <img src="/static/img/unfocus.svg" alt style="width: 12%; cursor:pointer">
               <img src="/static/img/warn.svg" alt style="width: 12%; cursor:pointer">
             </el-col>
             <el-col :pull="7">
-              <a href="javascript:void" class="userJob">全栈开发工程师</a>
-              <span>10 分钟前</span>
+              <a href="javascript:void" class="userJob">{{ topic.job }}</a>
+              <span>{{ topic.pubTime | fromNowTime}}</span>
             </el-col>
           </el-row>
         </div>
@@ -28,9 +28,7 @@
       <el-col :span="24">
         <div class="cart">
           <p>
-            performance：一个 PHP 性能分析器，可实时检测你的脚本、内存、
-            数据库使用情况，支持 Laravel 和 Composer。GitHub
-            地址：<a href="https://github.com/bvanhoekelen/performancegithub.com/bvanhoekelen/p">https://github.com/bvanhoekelen/performancegithub.com/bvanhoekelen/p...</a>
+            {{ topic.content }}
           </p>
         </div>
       </el-col>
@@ -59,6 +57,10 @@
 export default {
   name: "fun-cart-li",
   components: {},
+  props: ['topic'],
+  created() {
+    
+  },
   data() {
     return {
       zanFlag: false,
