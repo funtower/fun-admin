@@ -9,6 +9,7 @@ import Blog from '@/components/blog/Blog'
 import NotFound from '@/components/common/NotFound404'
 import Test from '@/components/common/Test'
 import Sub from '@/components/common/Sub'
+import GenDomainCode from '@/components/function/GenDomainCode'
 
 Vue.use(Router)
 
@@ -62,6 +63,11 @@ export default new Router({
             component: Sub
           }
           ]
+        },
+        {
+          path: '/Index/GenDomainCode',
+          name: 'GenDomainCode',
+          component: GenDomainCode
         }
       ]
     },

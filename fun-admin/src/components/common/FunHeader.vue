@@ -12,9 +12,9 @@
       <el-menu-item index="1" @click.native="toHomeCart">首页</el-menu-item>
       <el-submenu index="2">
         <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
+        <el-menu-item index="2-1" @click="toTest1">测试页面1</el-menu-item>
+        <el-menu-item index="2-2" @click="toGenDomainCode">自动构建Domain</el-menu-item>
+        <el-menu-item index="2-3" @click="toGenSqlScriptAssistant">SQL脚本助手</el-menu-item>
         <el-submenu index="2-4">
           <template slot="title">选项4</template>
           <el-menu-item index="2-4-1">选项1</el-menu-item>
@@ -43,6 +43,16 @@ export default {
       console.log(key, keyPath);
     },
     community() {},
+    
+    toTest1() {
+      this.$router.push({name: 'Test'});
+    },
+    toGenDomainCode() {
+      this.$router.push({name: 'GenDomainCode'});
+    },
+    toGenSqlScriptAssistant() {
+      this.$router.push({name: 'GenSqlScriptAssistant'});
+    },
 
     // 编程式导航路由
     toHomeCart() {

@@ -26,6 +26,8 @@ import HomeCart from '@/components/home/HomeCart'
 Vue.component(HomeCart.name, HomeCart);
 import FunCartLi from '@/components/community/FunCartLi'
 Vue.component(FunCartLi.name, FunCartLi);
+import SearchForm from '@/components/common/SearchForm'
+Vue.component(SearchForm.name, SearchForm);
 // 注册全局组件 结束
 
 // 引入全局样式
@@ -37,7 +39,7 @@ import Axios from 'axios';
 // 给 Vue 的原型挂载 $axios属性
 Vue.prototype.$axios = Axios;
 // Axios.defaults.baseURL = 'http://192.168.0.113:8081/ocl/cms/';
-Axios.defaults.baseURL = 'http://192.168.0.120:8081/ocl/';
+Axios.defaults.baseURL = 'http://localhost:8081/ocl/';
 // 定义拦截器
 // 1.定义请求发起前显示loading open();
 Axios.interceptors.request.use(function (config) {

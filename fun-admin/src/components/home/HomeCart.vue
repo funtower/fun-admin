@@ -2,7 +2,7 @@
   <div>
     <el-carousel :interval="4500" type="card" height="562px">
       <el-carousel-item v-for="(item,index) in swipeSrc" :key="index">
-        <img :src="item" alt="">
+        <img :src="item" alt />
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -14,14 +14,16 @@ export default {
   components: {},
   data() {
     return {
-        swipeSrc: [
-          'static/img/woman.jpg',
-            'static/img/shuben.jpg',
-            'static/img/xueshan.jpg',
-            'static/img/nanchang.jpg',
-            'static/img/laoshanghai.png',
-            'static/img/jiaoshi.jpg',
-        ]
+      swipeSrc: [
+        "static/img/nanchang.jpg",
+        "static/img/xueshan.jpg",
+        "static/img/laoshanghai.png",
+        "static/img/jiaoshi.jpg",
+        "static/img/shuben.jpg",
+        // 'static/img/xy01.jpg',
+        // 'static/img/xy02.jpg',
+        "static/img/woman.jpg"
+      ]
     };
   }
 };
@@ -35,9 +37,11 @@ export default {
   line-height: 200px;
   margin: 0;
 }
-img{
+
+img {
   height: 562px;
 }
+
 .el-carousel__item:nth-child(2n) {
   background-color: #99a9bf;
 }
@@ -48,14 +52,16 @@ img{
 
 // 自定义样式
 .el-carousel__item is-active {
-    height: 526px;
+  height: 526px;
 }
+
 .el-carousel__mask {
-    width: 100%;
-    height: 562px;
+  width: 100%;
+  height: 562px;
 }
+
 .el-carousel__item el-carousel__item--card is-in-stage img {
-    width: 100%;
-    height: 562px;
+  width: 100%;
+  height: 562px;
 }
 </style>

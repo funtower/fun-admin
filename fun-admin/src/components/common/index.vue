@@ -5,7 +5,7 @@
         <el-row>
           <el-col :span="6">
             <div class="logo">
-              <img src="/static/img/logo-green.png" alt>
+              <img src="/static/img/工程logo.png" alt>
             </div>
           </el-col>
           <el-col :span="7">
@@ -23,7 +23,7 @@
             <!-- </el-badge> -->
           </el-col>
           <el-col :span="2" style="margin-top: 10px;">
-            <el-button type="plain">登录</el-button>
+            <el-button type="primary" @click="login">登录</el-button>
           </el-col>
         </el-row>
       </el-header>
@@ -47,6 +47,11 @@ export default {
   components: {},
   data() {
     return {};
+  },
+  methods: {
+    login () {
+      console.log('登录了。。。');
+    }
   },
   created() {
     this.$router.push({
@@ -86,6 +91,7 @@ export default {
   text-align: center;
   // line-height: 160px;
   height: 100%;
+  // height: 500px;
 }
 
 body > .el-container {
