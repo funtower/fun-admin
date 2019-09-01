@@ -64,7 +64,7 @@ export default {
           {
             icon: "el-icon-search",
             type: "primary",
-            name: "查询",
+            name: "下一步",
             handleClick: this.search
           }
         ]
