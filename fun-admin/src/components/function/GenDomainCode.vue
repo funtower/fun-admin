@@ -2,7 +2,14 @@
   <div>
     <el-row>
       <el-col :span="18" :push="5">
-        <el-form :inline="true" :model="db" class="demo-form-inline" :label-position="lablePosit" label-width="80px">
+        <el-form
+          :inline="true"
+          :model="db"
+          class="demo-form-inline"
+          :label-position="lablePosit"
+          label-width="80px"
+          size="small"
+        >
           <el-row>
             <el-col :span="10">
               <el-form-item label="drivername">
@@ -19,14 +26,19 @@
                 <el-input v-model="db.url" placeholder="如：127.0.0.1:1521" clearable></el-input>
               </el-form-item>
             </el-col>
-            <el-col :span="10" >
+            <el-col :span="10">
               <el-form-item label="username">
-                <el-input v-model="db.username" placeholder="用户名" clearable></el-input>
+                <el-input v-model="db.username" placeholder="用户名" clearable ></el-input>
               </el-form-item>
             </el-col>
             <el-col :span="10">
               <el-form-item label="password">
                 <el-input v-model="db.password" placeholder="密码" :show-password="true" clearable></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="10">
+              <el-form-item label="日期">
+                <el-date-picker v-model="value2" type="month" placeholder="选择月"></el-date-picker>
               </el-form-item>
             </el-col>
           </el-row>
@@ -40,13 +52,15 @@
         </el-form>
       </el-col>
     </el-row>
-    <search-form
-        :formConfig="formConfig"
-        :value="form"
-      >
+    <el-row>
+      <el-col :span="18" :push="4">
+
+    <search-form :formConfig="formConfig" :value="form">
       <!-- 具名插槽使用示例 -->
       <!-- <input type="text" slot="formItem" value="sexlady"> -->
-      </search-form>
+    </search-form>
+      </el-col>
+    </el-row>
 
     <!-- <el-row>
       <el-col :span="15" :push="5">
@@ -56,7 +70,7 @@
           <el-table-column prop="address" label="地址"></el-table-column>
         </el-table>
       </el-col>
-    </el-row> -->
+    </el-row>-->
   </div>
 </template>
 
@@ -64,7 +78,8 @@
 export default {
   data() {
     return {
-      lablePosit: 'left',
+      value2: '',
+      lablePosit: "left",
       active: 0,
       db: {
         driver: "",
@@ -121,11 +136,11 @@ export default {
       ],
 
       formConfig: {
-        labelWidth: '100px',
+        labelWidth: "100px",
         formItemList: [
           {
             type: "month",
-            dateFormate: 'yyyy-MM',
+            dateFormate: "yyyy-MM",
             prop: "month",
             label: "统计月",
             placeholder: "统计月"
@@ -140,14 +155,14 @@ export default {
           {
             type: "date",
             prop: "startTime",
-            dateFormate: 'yyyy-MM-dd',
+            dateFormate: "yyyy-MM-dd",
             label: "承诺启用时间",
             placeholder: "承诺启用时间"
           },
           {
             type: "date",
             prop: "endTime",
-            dateFormate: 'yyyy-MM-dd',
+            dateFormate: "yyyy-MM-dd",
             label: "承诺停用时间",
             placeholder: "承诺停用时间"
           },
@@ -163,19 +178,17 @@ export default {
           {
             icon: "el-icon-search",
             type: "primary",
-            name: '查询',
+            name: "查询",
             handleClick: this.search
           }
         ]
       },
-      form: {
-      },
-
+      form: {}
     };
   },
   methods: {
     search() {
-      console.log(this.form)
+      console.log(this.form);
     },
     doGenerate() {
       console.log("submit!");
@@ -195,4 +208,8 @@ export default {
 .el-form-item__label {
   color: #e5e6e8;
 }
+.el-date-editor.el-input, .el-date-editor.el-input__inner {
+  // 为了解决日期选择器宽度与其他form-item元素不一致，将其宽度修改
+    width: 93.51%;
+  }
 </style>

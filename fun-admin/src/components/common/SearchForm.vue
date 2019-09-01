@@ -5,7 +5,7 @@
         label-position="right"
         :label-width="formConfig.labelWidth"
         :rules="rules"
-        size="mini"
+        size="medium"
       >
         <!-- 具名插槽，可定制 -->
         <slot name="formItem" />
