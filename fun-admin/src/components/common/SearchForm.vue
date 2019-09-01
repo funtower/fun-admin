@@ -1,52 +1,59 @@
 <template>
-      <el-form
-        :inline="true"
-        :model="value"
-        label-position="right"
-        :label-width="formConfig.labelWidth"
-        :rules="rules"
-        size="medium"
-      >
-        <!-- 具名插槽，可定制 -->
-        <slot name="formItem" />
+  <el-form
+    :inline="true"
+    :model="value"
+    label-position="right"
+    :label-width="formConfig.labelWidth"
+    :rules="rules"
+    size="medium"
+  >
+    <!-- 具名插槽，可定制 -->
+    <slot name="formItem" />
 
-        <el-row>
-          <el-col :span="10" :pull="(index%2)" v-for="(item,index) in formConfig.formItemList" :key="index">
-            <el-form-item :key="index" :label="item.label" :prop="item.prop">
-              <el-input
-                v-if="item.type=='input'"
-                v-model="value[item.prop]"
-                :disabled="item.disabled"
-                :clearable="true"
-                :show-password="item.ispassword"
-                :placeholder="item.placeholder"
-              ></el-input>
-              <el-select
-                :clearable="true"
-                v-else-if="item.type=='select'"
-                v-model="value[item.prop]"
-                :disabled="item.disabled"
-                :placeholder="item.placeholder"
-              >
-                <el-option
-                  v-for="(optItem,index) in item.optList"
-                  :key="index"
-                  :label="optItem.label"
-                  :value="optItem.value"
-                ></el-option>
-              </el-select>
-              <el-date-picker
-                :value-format="item.dateFormate"
-                v-else
-                v-model="value[item.prop]"
-                :type="item.type"
-                :disabled="item.disabled"
-                :clearable="true"
-                :placeholder="item.label"
-              ></el-date-picker>
-            </el-form-item>
-          </el-col>
-        </el-row>
+    <el-row>
+      <el-col
+        :span="10"
+        :pull="(index%2)"
+        v-for="(item,index) in formConfig.formItemList"
+        :key="index"
+      >
+        <el-form-item :key="index" :label="item.label" :prop="item.prop">
+          <el-input
+            v-if="item.type=='input'"
+            v-model="value[item.prop]"
+            :disabled="item.disabled"
+            :clearable="true"
+            :show-password="item.ispassword"
+            :placeholder="item.placeholder"
+          ></el-input>
+          <el-select
+            :clearable="true"
+            v-else-if="item.type=='select'"
+            v-model="value[item.prop]"
+            :disabled="item.disabled"
+            :placeholder="item.placeholder"
+          >
+            <el-option
+              v-for="(optItem,index) in item.optList"
+              :key="index"
+              :label="optItem.label"
+              :value="optItem.value"
+            ></el-option>
+          </el-select>
+          <el-date-picker
+            :value-format="item.dateFormate"
+            v-else
+            v-model="value[item.prop]"
+            :type="item.type"
+            :disabled="item.disabled"
+            :clearable="true"
+            :placeholder="item.label"
+          ></el-date-picker>
+        </el-form-item>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :pull="2">
         <div class="searchBtn">
           <el-button-group>
             <el-button
@@ -60,7 +67,9 @@
           </el-button-group>
           <slot name="operate"></slot>
         </div>
-      </el-form>
+      </el-col>
+    </el-row>
+  </el-form>
 </template>
 <script>
 export default {

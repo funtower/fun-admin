@@ -2,14 +2,12 @@
   <div>
     <el-row>
       <el-col :span="18" :push="4">
-
-    <search-form :formConfig="formConfig" :value="form">
-      <!-- 具名插槽使用示例 -->
-      <!-- <input type="text" slot="formItem" value="sexlady"> -->
-    </search-form>
+        <search-form :formConfig="formConfig" :value="form">
+          <!-- 具名插槽使用示例 -->
+          <!-- <input type="text" slot="formItem" value="sexlady"> -->
+        </search-form>
       </el-col>
     </el-row>
-
   </div>
 </template>
 
@@ -17,15 +15,6 @@
 export default {
   data() {
     return {
-      value2: '',
-      lablePosit: "left",
-      active: 0,
-      db: {
-        driver: "",
-        url: "",
-        username: "",
-        password: ""
-      },
       formConfig: {
         labelWidth: "100px",
         formItemList: [
@@ -33,12 +22,15 @@ export default {
             type: "select",
             prop: "driver",
             label: "数据库驱动名",
-            placeholder: "oracle.jdbc.driver.OracleDriver",
+            placeholder: "    --请选择数据库驱动--",
             optList: [
-              {lable: 'Oracle', value: 'oracle.jdbc.driver.OracleDriver'},
-              {lable: 'SqlServer', value: 'com.microsoft.jdbc.sqlserver.SQLServerDriver'},
-              {lable: 'MySQL', value: 'com.mysql.jdbc.Driver'}
-              ]
+              { lable: "Oracle", value: "oracle.jdbc.driver.OracleDriver" },
+              {
+                lable: "SqlServer",
+                value: "com.microsoft.jdbc.sqlserver.SQLServerDriver"
+              },
+              { lable: "MySQL", value: "com.mysql.jdbc.Driver" }
+            ]
           },
           {
             type: "input",
@@ -58,32 +50,26 @@ export default {
             label: "口令",
             ispassword: true,
             placeholder: "请输入密码"
-          },
+          }
         ],
         operate: [
           {
-            icon: "el-icon-search",
+            icon: "el-icon-check",
             type: "primary",
             name: "下一步",
-            handleClick: this.search
+            handleClick: this.next
           }
         ]
       },
       form: {
-        username: 'rircp'
+        username: "sysdba",
       }
     };
   },
   methods: {
-    search() {
-      console.log(this.form);
-    },
-    doGenerate() {
-      console.log("submit!");
-    },
     next() {
-      if (this.active++ > 2) this.active = 0;
-    },
+      // this.form可以直接拿到form表单里的键值对
+    }
   }
 };
 </script>
@@ -96,8 +82,8 @@ export default {
 .el-form-item__label {
   color: #e5e6e8;
 }
+
 .el-date-editor.el-input, .el-date-editor.el-input__inner {
-  // 为了解决日期选择器宽度与其他form-item元素不一致，将其宽度修改
-    width: 93.51%;
-  }
+  width: 93.51%;
+}
 </style>
