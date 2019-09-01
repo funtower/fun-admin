@@ -50,14 +50,14 @@ export default {
             type: "input",
             prop: "username",
             label: "用户名",
-            placeholder: ""
+            placeholder: "请输入用户名"
           },
           {
             type: "input",
             prop: "password",
             label: "口令",
             ispassword: true,
-            placeholder: ""
+            placeholder: "请输入密码"
           },
         ],
         operate: [
