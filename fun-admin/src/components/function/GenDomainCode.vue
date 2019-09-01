@@ -19,8 +19,6 @@
                 <el-input v-model="db.url" placeholder="如：127.0.0.1:1521" clearable></el-input>
               </el-form-item>
             </el-col>
-          </el-row>
-          <el-row>
             <el-col :span="10" >
               <el-form-item label="username">
                 <el-input v-model="db.username" placeholder="用户名" clearable></el-input>
@@ -123,6 +121,7 @@ export default {
       ],
 
       formConfig: {
+        labelWidth: '100px',
         formItemList: [
           {
             type: "month",
