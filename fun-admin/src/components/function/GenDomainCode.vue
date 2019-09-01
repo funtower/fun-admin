@@ -1,58 +1,6 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="18" :push="5">
-        <el-form
-          :inline="true"
-          :model="db"
-          class="demo-form-inline"
-          :label-position="lablePosit"
-          label-width="80px"
-          size="small"
-        >
-          <el-row>
-            <el-col :span="10">
-              <el-form-item label="drivername">
-                <el-select v-model="db.driver" placeholder="数据库驱动名" clearable>
-                  <el-option
-                    label="oracle.jdbc.driver.OracleDriver"
-                    value="oracle.jdbc.driver.OracleDriver"
-                  ></el-option>
-                </el-select>
-              </el-form-item>
-            </el-col>
-            <el-col :span="10">
-              <el-form-item label="url">
-                <el-input v-model="db.url" placeholder="如：127.0.0.1:1521" clearable></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="10">
-              <el-form-item label="username">
-                <el-input v-model="db.username" placeholder="用户名" clearable ></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="10">
-              <el-form-item label="password">
-                <el-input v-model="db.password" placeholder="密码" :show-password="true" clearable></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="10">
-              <el-form-item label="日期">
-                <el-date-picker v-model="value2" type="month" placeholder="选择月"></el-date-picker>
-              </el-form-item>
-            </el-col>
-          </el-row>
-          <el-row>
-            <el-col :pull="5">
-              <el-form-item>
-                <el-button type="primary" @click="doGenerate">生成</el-button>
-              </el-form-item>
-            </el-col>
-          </el-row>
-        </el-form>
-      </el-col>
-    </el-row>
-    <el-row>
       <el-col :span="18" :push="4">
 
     <search-form :formConfig="formConfig" :value="form">
@@ -62,15 +10,6 @@
       </el-col>
     </el-row>
 
-    <!-- <el-row>
-      <el-col :span="15" :push="5">
-        <el-table :data="tableData" stripe style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
-        </el-table>
-      </el-col>
-    </el-row>-->
   </div>
 </template>
 
@@ -87,92 +26,39 @@ export default {
         username: "",
         password: ""
       },
-      tableData: [
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        }
-      ],
-
       formConfig: {
         labelWidth: "100px",
         formItemList: [
           {
-            type: "month",
-            dateFormate: "yyyy-MM",
-            prop: "month",
-            label: "统计月",
-            placeholder: "统计月"
-          },
-          {
             type: "select",
-            prop: "org",
-            label: "运营商",
-            placeholder: "运营商",
-            optList: []
+            prop: "driver",
+            label: "数据库驱动名",
+            placeholder: "oracle.jdbc.driver.OracleDriver",
+            optList: [
+              {lable: 'Oracle', value: 'oracle.jdbc.driver.OracleDriver'},
+              {lable: 'SqlServer', value: 'com.microsoft.jdbc.sqlserver.SQLServerDriver'},
+              {lable: 'MySQL', value: 'com.mysql.jdbc.Driver'}
+              ]
           },
           {
-            type: "date",
-            prop: "startTime",
-            dateFormate: "yyyy-MM-dd",
-            label: "承诺启用时间",
-            placeholder: "承诺启用时间"
+            type: "input",
+            prop: "url",
+            label: "连接地址",
+            placeholder: "如：127.0.0.1:1521"
           },
           {
-            type: "date",
-            prop: "endTime",
-            dateFormate: "yyyy-MM-dd",
-            label: "承诺停用时间",
-            placeholder: "承诺停用时间"
+            type: "input",
+            prop: "username",
+            label: "用户名",
+            placeholder: ""
           },
           {
-            type: "select",
-            prop: "direction",
-            label: "话务方向",
-            placeholder: "话务方向",
-            optList: []
-          }
+            type: "input",
+            prop: "password",
+            label: "口令",
+            ispassword: true,
+            placeholder: ""
+          },
         ],
         operate: [
           {
@@ -183,7 +69,9 @@ export default {
           }
         ]
       },
-      form: {}
+      form: {
+        username: 'rircp'
+      }
     };
   },
   methods: {
@@ -195,7 +83,7 @@ export default {
     },
     next() {
       if (this.active++ > 2) this.active = 0;
-    }
+    },
   }
 };
 </script>

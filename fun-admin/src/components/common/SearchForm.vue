@@ -11,13 +11,14 @@
         <slot name="formItem" />
 
         <el-row>
-          <el-col :span="10" :push="(index%2)+1" v-for="(item,index) in formConfig.formItemList" :key="index">
+          <el-col :span="10" :pull="(index%2)" v-for="(item,index) in formConfig.formItemList" :key="index">
             <el-form-item :key="index" :label="item.label" :prop="item.prop">
               <el-input
                 v-if="item.type=='input'"
                 v-model="value[item.prop]"
                 :disabled="item.disabled"
                 :clearable="true"
+                :show-password="item.ispassword"
                 :placeholder="item.placeholder"
               ></el-input>
               <el-select
@@ -81,7 +82,7 @@ export default {
   computed: {},
   methods: {
     setDefaultValue() {
-      const formData = {};
+      const formData = { ...this.value };
       // 设置默认值
       this.formConfig.formItemList.forEach(({ key, value }) => {
         if (formData[key] === undefined || formData[key] === null) {
@@ -92,7 +93,7 @@ export default {
     }
   },
   mounted() {
-    // this.setDefaultValue();
+    this.setDefaultValue();
   }
 };
 </script>
