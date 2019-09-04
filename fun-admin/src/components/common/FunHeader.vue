@@ -48,7 +48,7 @@ export default {
       this.$router.push({name: 'Test'});
     },
     toGenDomainCode() {
-      this.$router.push({name: 'GenDomainCode'});
+      this.$router.push({name: 'DbConfig'});
     },
     toGenSqlScriptAssistant() {
       this.$router.push({name: 'GenSqlScriptAssistant'});

@@ -5,6 +5,7 @@
         <search-form :formConfig="formConfig" :value="form">
           <!-- 具名插槽使用示例 -->
           <!-- <input type="text" slot="formItem" value="sexlady"> -->
+        <template slot='formItem'><p>sexlady</p></template>
         </search-form>
       </el-col>
     </el-row>
@@ -23,6 +24,8 @@ export default {
             prop: "driver",
             label: "数据库驱动名",
             placeholder: "    --请选择数据库驱动--",
+            isMultiple: true,
+            isMore: true,
             optList: [
               { lable: "Oracle", value: "oracle.jdbc.driver.OracleDriver" },
               {
@@ -62,13 +65,19 @@ export default {
         ]
       },
       form: {
-        username: "sysdba",
+        username: "sysdba"
       }
     };
   },
   methods: {
     next() {
       // this.form可以直接拿到form表单里的键值对
+      console.log("表单内容", this.form);
+      this.$router.push({name: "TableSelect"});
+      this.$axios
+        .post("/genarateDomain.do", this.form)
+        .then(console.log)
+        .catch(console.log);
     }
   }
 };

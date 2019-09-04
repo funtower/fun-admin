@@ -9,7 +9,8 @@ import Blog from '@/components/blog/Blog'
 import NotFound from '@/components/common/NotFound404'
 import Test from '@/components/common/Test'
 import Sub from '@/components/common/Sub'
-import GenDomainCode from '@/components/function/GenDomainCode'
+import DbConfig from '@/components/function/DbConfig'
+import TableSelect from '@/components/function/TableSelect'
 
 Vue.use(Router)
 
@@ -65,9 +66,14 @@ export default new Router({
           ]
         },
         {
-          path: '/Index/GenDomainCode',
-          name: 'GenDomainCode',
-          component: GenDomainCode
+          path: '/Index/DbConfig',
+          name: 'DbConfig',
+          component: DbConfig
+        },
+        {
+          path: '/Index/TableSelect',
+          name: 'TableSelect',
+          component: TableSelect
         }
       ]
     },
